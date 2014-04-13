@@ -13,7 +13,7 @@ class Ebay{
 		$this->global_id = $global_id; 
 	}
 
-	public function findItems($keyword = '', $limit = 200){
+	public function findItems($keyword = '', $limit = 10){
 
 		$url 	= $this->url . '?';
 		$url .= 'operation-name=findItemsByKeywords';
@@ -27,7 +27,7 @@ class Ebay{
 		return json_decode(file_get_contents($url), true);
 	}
 
-	public function findItemsAdvanced($keyword = '', $item_sort = 'StartTimeNewest', $item_type = 'FixedPricedItem', $min_price = '0', $max_price = '9999999', $limit = 100){
+	public function findItemsAdvanced($keyword = '', $item_sort = 'StartTimeNewest', $item_type = 'FixedPricedItem', $min_price = '0', $max_price = '9999999', $limit = 10){
 
 		$url 	=  $this->url . '?';
 		$url .= 'operation-name=findItemsAdvanced';
